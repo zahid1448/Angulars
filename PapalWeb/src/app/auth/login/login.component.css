@@ -1,0 +1,65 @@
+section{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+section article{
+    width: 350px;
+    background: rgb(255 255 255);
+    padding: 20px;
+}
+form label{
+    display: block;
+    padding: 4px;
+}
+form input,select{
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+    height: 40px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+}
+button{
+    background: royalblue;
+    color: #fff;
+    width: 100%;
+    display: block;
+    border: 1px solid royalblue;
+    height: 40px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 3px;
+}
+.error{
+    color: rgb(255 0 0);
+    padding: 5px 0;
+    font-weight: bold;
+}
+.ng-touched.ng-valid:not(form)
+{
+    border: 1px solid green;
+    background: rgb(232 255 233 / 94%);
+}
+.ng-touched.ng-invalid:not(form)
+{
+    border:1px solid rgb(237 20 61);
+    background: rgb(236 99 124 / 24%);
+    color: rgb(237 20 61)
+}
+.ng-touched.ng-invalid:not(form)::placeholder
+{
+color: rgb(237 20 61);
+}
+.ng-touched.ng-valid:not(form)::placeholder{
+    color: green;
+}
+button:disabled{
+    background: #ccc;
+    border: 2px solid #eee;
+    opacity: 0.6;
+}

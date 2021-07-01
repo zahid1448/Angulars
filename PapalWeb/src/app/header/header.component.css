@@ -1,0 +1,34 @@
+#headerBlock{
+    width: 100%;
+    height: 70px;
+    background: #006e9e; 
+    overflow: hidden;
+    border-bottom: 1px solid rgb(255,255,255/30%);
+    position: relative;
+    z-index: 1;
+}
+#headerBlock article{
+    width: 80px;
+    margin: 0 auto;
+    display: flex;
+    height: 70px;
+    align-items: center;
+}
+#headerBlock article .logoBlock{
+    flex-basis: 25%;
+}
+.logoBlock a{
+background: url("../../assets/ppcom-white.svg");
+height: 33px;
+width: 134px;
+display: inline-block;
+background-size:contain;
+background-repeat: no-repeat;
+text-indent: -999px; 
+}
+#headerBlock article .mainmenu{
+flex-basis: 50%;
+}
+#headerBlock article .authmenu{
+flex-basis: 25%;
+}

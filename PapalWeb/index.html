@@ -1,0 +1,145 @@
+
+
+<div class="dv1" style="border:1px solid #000000;">
+<html>
+		<title>Simple Paint App</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css"> 
+    <div style="border:1px solid #000000;"> 
+      <!-- <div class="dv" id="heading">
+    <h5>Simple Paint App</h5>
+  </div>  -->
+		<div class="topnav">
+        <div class="dv" id="heading">
+            <h5>Simple Paint App</h5>
+				<a class="active" href="#home"><span>&#8678;</span></a>
+				<a href="#about"><span>&#8680;</span> </a>
+          <a href="#abouts"><span>&#10540;</span></a>
+				<a href="#contact"><span>&#8679;</span></a>
+      <a >	<input type="text" placeholder="Search.." ></a>
+      
+        </div>
+      </div>
+    </div>
+
+</head>
+<form >
+<body>
+    <div id="heading">
+        <h2>Simple Paint App</h2>
+      </div>
+<canvas id="triangle" width="500" height="250" style="border:1px solid #000000;"></canvas>
+<canvas id="triangle1" width="300" height="300"></canvas>
+<!-- <button onmouseover="clearcanvas1()">clear</button>
+<button id="resetCanvas">Reset</button> -->
+<script>
+
+// 	var tri=document.getElementById('triangle').getContext('2d');
+// tri.fillStyle='purple';
+// tri.beginPath();
+// tri.moveTo(150,150);
+// tri.lineTo(50,250);
+// tri.lineTo(250,250);
+// tri.fill();
+//-------------------------
+function clearcanvas1()
+{
+    var canvas = document.getElementById('triangle'),
+        ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+//---------------------
+var canvas = document.getElementById("triangle");
+var ctx = canvas.getContext("2d");
+//Current unconnected points
+var mouse = [];
+//Existing triangles
+var triangles = [];
+//The function that draws
+function draw() {
+    //Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //Draw existing triangles
+    for (var tIndex = 0; tIndex < triangles.length; tIndex++) {
+      var triangle = triangles[tIndex];
+      ctx.beginPath();
+      ctx.moveTo(triangle.a.x, triangle.a.y);
+      ctx.lineTo(triangle.b.x, triangle.b.y);
+      ctx.lineTo(triangle.c.x, triangle.c.y);
+      ctx.closePath();
+      ctx.stroke();
+    }
+    //Draw current mouse points
+    if (mouse.length > 0) {
+      ctx.beginPath();
+      ctx.moveTo(mouse[0].x, mouse[0].y);
+    }
+    if (mouse.length > 1) {
+      ctx.lineTo(mouse[1].x, mouse[1].y);
+    }
+    if (mouse.length > 0) {
+      ctx.stroke();
+    }
+  }
+  //Catch point
+canvas.onclick = function eventHandler(event) {
+  //Add points to list
+  mouse.push({
+    x: event.layerX,
+    y: event.layerY
+  });
+  //If we have enough points, add a triangle
+  if (mouse.length >= 3) {
+    //Adding the triangle
+    triangles.push({
+      a: mouse[0],
+      b: mouse[1],
+      c: mouse[2]
+    });
+    //Clear points
+    mouse = [];
+  }
+  //Update canvas
+  draw();
+};
+//---------
+// $("#resetCanvas").click(function(){
+//   var canvas= document.getElementById('triangle');
+//  var ctx = canvas.getContext('2d');
+//     ctx.clearRect(0, 0,  canvas.width, canvas.height);
+// });
+</script>
+<a ><button onmouseover="clearcanvas1()">clear</button></a></p><br><br><br><br><br>
+<footer>
+   
+    <!-- <a ><button onmouseover="clearcanvas1()">clear</button></a></p><br> -->
+    <!-- <a ><button id="resetCanvas">Reset</button></a> -->
+  </footer>
+</body>
+</form>
+</html>
+</div>
+ <!-- <style>
+canvas{
+	background: #ddd;
+}
+#triangle{
+	margin: auto;
+	display: block;
+	position: absolute;
+	padding: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+	span {
+	 content: "\21D0";
+					  }
+					  span {
+  content: "\21D2";
+}
+span {
+  content: "\21D1";
+}
+</style>  -->

@@ -1,0 +1,23 @@
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li a{
+    padding: 6px 18px;
+    text-decoration: none;
+    color:rgb(red, green, blue);
+    text-transform:capitalize;
+    font-weight: bold;
+    border-radius: 27px;
+    margin: 5px;
+    font-size: 13px;
+}
+.login{
+    background: #fff;
+    border: 1px solid #fff;
+}
+.sinup{
+    background: #fff;
+    border: 1px solid #fff;
+    color: #111 !important;  
+}

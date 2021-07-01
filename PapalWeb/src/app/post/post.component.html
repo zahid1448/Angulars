@@ -1,0 +1,42 @@
+  <section>
+ <article>
+ <div *ngFor="let user of gitUsers; index as i">
+<img src="{{user.avatar_url}}"/>
+<h2>Id:{{user.id}}</h2>
+<h2>Name:{{user.login}}</h2>
+<h2>Type:{{user.type}}</h2>
+<h2>Admin:{{user.site_admin}}</h2> 
+
+         </div>
+      </article>
+  </section>
+   <ul>
+<li *ngFor="let api of topics">
+<h1>{{api.id}}</h1>
+ <h2>{{api.name}}</h2>
+ <p>{{api.description}}</p>
+ <!-- <span>{{api.createdAt | date}}</span>  -->
+     </li>
+</ul> 
+
+
+
+<!-- <ul>
+    <li *ngFor="let user of users">
+        <h1>{{user}}</h1>
+    </li>
+</ul> -->
+<!-- <ul>
+    <li *ngFor="let post of posts; index as i">
+    <span>{{i+1}}</span>
+    <h1>{{post.title}}</h1>
+    <p>{{post.body}}</p>
+            </li>
+        </ul>  -->
+        <!-- <ul>
+                <li *ngFor ="let user of users; index as i">
+                <span>{{i+1}}</span>
+                <h2>{{user.name}}</h2>
+                <p>{{user.email}}</p>
+                </li>
+                    </ul>   -->

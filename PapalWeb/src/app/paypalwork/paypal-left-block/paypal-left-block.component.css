@@ -1,0 +1,25 @@
+h2{
+    padding: 30px 0 20px;
+    font-size: 35px;
+    letter-spacing: 1.2px;
+}
+p{
+    padding: 0px 0 20px;
+
+}
+ul{
+    padding: 0 25px;
+    list-style: none;
+}
+ul li{
+    display: flex;
+}
+li div:nth-child(1){
+    height: 50px;
+    background: rgb(0 0 0 / 0%);
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin: 0px 20px 0 -10px;
+    border-radius: 100%;
+}

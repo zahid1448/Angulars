@@ -1,0 +1,11 @@
+nav ul{
+    display: flex;
+    list-style: none;
+}
+nav ul li a{
+    padding: 12px 15px;
+    text-emphasis: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}

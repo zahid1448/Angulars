@@ -1,0 +1,60 @@
+<section>
+    <button  id="formButton" (click)="toggle1('loginForm','formButton')">Label</button>
+    <!-- <button id="formButton" (click)="toggle('loginForm','formButton')">Login</button> -->
+<article id="loginForm" style="display:none">
+        <!-- <button  id="formButton" (click)="toggle1('loginForm','formButton')">Label</button> -->
+<div>
+            <h2>Login</h2>
+            <button class="btn btn-denger" (click)="toggle('formButton','loginForm')">X</button>
+            <form class="form-check-inline" #form="ngForm" (ngSubmit)="submit(form)" novalidate>
+<div class="from-group">
+<label for="username">Username</label>
+<input type="text"
+name="username"
+id="username"
+placeholder="eneter username"
+ngModel
+#username="ngModel"
+(change)="GetUserName(username)"
+required
+minlength="3"
+maxlength="10"
+pattern="^[a-zA-Z0-9_]{5,}[a-zA-Z]+[0-9]*$"
+/>
+<div class="error"*ngIf="username.invalid && username.touched">
+<p *ngIf="username.errors.required">username required</p>
+<p *ngIf="username.errors.minlength">username should be minimum 3 characters</p>
+<p *ngIf="username.errors.minlength">username should be maximum 10 characters</p>
+</div>
+</div>
+                <div class="from-group">
+                    <label for="password">password</label>
+                    <input type="password"
+                    name="password"
+                    id="password"
+                    placeholder="eneter password"
+                    ngModel
+                    #password="ngModel"
+                    minlength="6"
+                    required
+                    />        
+            
+                        <div class="error"*ngIf="password.invalid && password.touched">
+                         <p *ngIf="password.errors.required">password required</p>
+                        <p *ngIf="password.errors.minlength">password should be minimum 6 characters</p>
+                        </div>
+                </div>
+<div class="form-group">
+<label for="country">Select country</label>
+<select name="country" id="country" ngModel>
+<option *ngFor="let country of countryList" [value]="country.code">{{country.name}}</option>
+</select>
+     </div>           
+<div class="from-group">
+<button class="btn btn-primary"[disabled]="!form.valid">Login</button>
+</div>
+{{form.value | json}}
+</form>
+</div>
+</article>
+</section>

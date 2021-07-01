@@ -1,0 +1,12 @@
+<h2>How paypal works</h2>
+<p>It’s an easier, faster and safer way to pay online and on your mobile.
+</p>
+<ul *ngFor="let data of online_mobile_data;index as i">
+    <li>
+        <div>{{i+1}}</div>
+        <div>
+            <h3>{{data.title}}</h3>
+            <p>{{data.description}}</p>
+        </div>
+    </li>  
+</ul>

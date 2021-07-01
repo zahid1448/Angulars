@@ -1,0 +1,14 @@
+.paypalWorkBlock{
+    background-color: rgb(0 156 122);
+    background-image: radial-gradient(
+        circle farthest-side at center bottom,
+        rgb(0 156 122),
+        rgb(0 48 135) 125%);
+    color: rgb(255 255 255);
+    height: 600px;
+}
+.paypalWorkBlock article{
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+}
